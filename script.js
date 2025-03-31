@@ -26,13 +26,13 @@ function herochange(index) {
     }, 500);
 }
 
-// function resetInterval() {
-//     clearInterval(interval);
-//     interval = setInterval(() => {
-//         counter = (counter + 1) % images.length;
-//         herochange(counter);
-//     }, 10000);
-// }
+function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(() => {
+        counter = (counter + 1) % images.length;
+        herochange(counter);
+    }, 10000);
+}
 
 slider.forEach((dot,index)=>{
     dot.addEventListener("click",()=>{
