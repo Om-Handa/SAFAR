@@ -88,11 +88,16 @@ body{
 
 .heroimg{
   position: absolute;
+  transition: opacity 3s ease-in-out;
   width: 100vw;
   height: 90vh;
   background: url('images/hero1.jpg');
   background-size: cover;
-  filter: blur(2px);
+  filter: blur(1px);
+}
+
+.heroimg.fade {
+  opacity: 0;
 }
 
 .slider1{
@@ -109,16 +114,16 @@ body{
 }
 
 .hero-text{
-  font-weight: 800;
+  font-weight: 900;
   z-index: 1;
-  font-size: 60px;
+  font-size: 80px;
   position: relative;
 }
 
 .tagline{
-  font-weight: 800;
+  font-weight: 900;
   z-index: 1;
-  font-size: 25px;
+  font-size: 45px;
 }
 
 .herochange{

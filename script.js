@@ -1,93 +1,57 @@
 let heroright= document.querySelector(".hero-slider-right");
 let heroleft= document.querySelector(".hero-slider-left");
-let slider1=document.querySelector(".slider1");
-let slider2=document.querySelector(".slider2");
-let slider3=document.querySelector(".slider3");
-let slider4=document.querySelector(".slider4");
+let slider=document.querySelectorAll(".slider")
 let heroimg=document.querySelector(".heroimg");
-let slider=document.querySelectorAll(".slider");
-let counter_right=1;
-let counter_left=5;
+let counter=0;
+let interval;
 
-function herochange(url){
-    heroimg.style.background=`url(${url})`;
-    heroimg.style.backgroundPosition='center';
-    heroimg.style.backgroundSize='cover';
-    heroimg.style.backgroundRepeat='no-repeat';
-    slider.forEach(e => {
-        e.style.background='none';
-    });
+let images=[
+    'images/hero1.jpg',
+    'images/hero5.jpg',
+    'images/hero8.jpg',
+    'images/hero7.jpg'
+];
+
+function herochange(index) {
+    heroimg.classList.add("fade");
+    setTimeout(() => {
+        heroimg.style.background = `url(${images[index]})`;
+        heroimg.style.backgroundPosition = 'center';
+        heroimg.style.backgroundSize = 'cover';
+        heroimg.style.backgroundRepeat = 'no-repeat';
+        slider.forEach((e, i) => {
+            e.style.background = i === index ? '#eead4b' : 'none';
+        });
+        heroimg.classList.remove("fade");
+    }, 500);
 }
 
-slider1.addEventListener("click", ()=>{
-    herochange('images/hero1.jpg')
-    slider1.style.background='#eead4b'
-})
-slider2.addEventListener("click", ()=>{
-    herochange('images/hero2.avif')
-    slider2.style.background='#eead4b'
-})
-slider3.addEventListener("click", ()=>{
-    herochange('images/hero3.jpg')
-    slider3.style.background='#eead4b'
-})
-slider4.addEventListener("click", ()=>{
-    herochange('images/hero4.jpg')
-    slider4.style.background='#eead4b'
+function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(() => {
+        counter = (counter + 1) % images.length;
+        herochange(counter);
+    }, 10000);
+}
+
+slider.forEach((dot,index)=>{
+    dot.addEventListener("click",()=>{
+        counter=index;
+        herochange(counter);
+        resetInterval();
+    })
 })
 
 heroright.addEventListener("click",()=>{
-    counter_right++;
-    console.log(counter_right)
-    switch(counter_right){
-        case 1:
-            herochange('images/hero1.jpg');
-            slider1.style.background='#eead4b';
-            break;
-        case 2:
-            herochange('images/hero2.avif');
-            slider2.style.background='#eead4b'; 
-            break;
-        case 3:
-            herochange('images/hero3.jpg');
-            slider3.style.background='#eead4b'; 
-            break;
-        case 4:
-            herochange('images/hero4.jpg');
-            slider4.style.background='#eead4b'; 
-            break;
-        default:
-            counter_right=1;
-            herochange('images/hero1.jpg');
-            slider1.style.background='#eead4b';
-            break;
-    }
+    counter=(counter+1)%images.length;
+    herochange(counter);
+    resetInterval();
 })
 
 heroleft.addEventListener("click",()=>{
-    counter_left--;
-    console.log(counter_left)
-    switch(counter_left){
-        case 1:
-            herochange('images/hero1.jpg');
-            slider1.style.background='#eead4b';
-            break;
-        case 2:
-            herochange('images/hero2.avif');
-            slider2.style.background='#eead4b'; 
-            break;
-        case 3:
-            herochange('images/hero3.jpg');
-            slider3.style.background='#eead4b'; 
-            break;
-        case 4:
-            herochange('images/hero4.jpg');
-            slider4.style.background='#eead4b'; 
-            break;
-        default:
-            counter_left=4;
-            herochange('images/hero4.jpg');
-            slider4.style.background='#eead4b';
-            break;
-    }
+    counter=(counter-1+images.length)%images.length;
+    herochange(counter);
+    resetInterval();
 })
+
+resetInterval();
