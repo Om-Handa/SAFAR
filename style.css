@@ -31,12 +31,6 @@ body{
   font-size: 23px;
 }
 
-/* .searchbar{
-  width: 30vw;
-  height: 100%;
-  background-color: blue;
-} */
-
 .signin{
   width: 10vw;
   height: 100%;
@@ -176,7 +170,7 @@ body{
 
 .book p {
   padding-left: 50px;
-  font-size: 3em;
+  font-size: 5em;
   position: relative;
   z-index: 1; 
 }
@@ -187,9 +181,58 @@ body{
   z-index: 1;
 }
 
+.border{
+  margin-top: 10vh;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+.heading{
+  margin-left: 3vh;
+  margin-top:100px;
+  font-size: 50px;
+}
 .card1{
-  /* background-color: red; */
-  height: 50vh;
+  height: 40vh;
+  width: 94vw;
+  margin: 100px 30px;
+  gap: 10px;
+}
+
+.helpcard{
+  width: 25vw;
+  height: 100%;
+  border-left: 4px solid black;
+  gap:20px;
+}
+
+.helpcard5{
+  border-right:4px solid black
+}
+
+.helpcard_img{
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.helpcard_text{
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.helpcard_desc{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.card2{
+  height: 70vh;
   width: 94vw;
   margin: 150px 30px;
   gap: 10px;
@@ -199,24 +242,31 @@ body{
   width: 25vw;
   height: 100%;
   border: 4px solid black;
+  text-align: justify;
 }
 
-.card2{
-  margin-top: 100px;  
-  height: 30vh;
-  width: 94vw;
-  margin: 0 30px 100px 30px;
-  gap: 10px;
+.salecard_img{
+  width: 100%;
+  height: 40%;
+  background-size: cover;
+  border-bottom: 4px solid black;
 }
 
-.helpcard{
-  width: 25vw;
-  height: 100%;
-  border: 4px solid black;
+.salecard_head{
+  padding: 3px;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.salecard_desc{
+  padding: 3px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .footer{
-  height: 30vh;
+  height: 35vh;
   width: 100%;
   background-color: #4a3027;
 }
@@ -224,9 +274,48 @@ body{
 .footertext{
   height: 100%;
   width: 33%;
-  border-right: 2px solid white;
+  border-right: 2px solid white;  
+  margin-left: 20px;
 }
 
-.footerslot3{
-  border: none;
+.footer_heading{  
+  margin: 10px 0 0 0;
+  font-size: 25px;
+  color: white;
 }
+
+.footer1_text{
+  color: white;
+  font-size: 18px;
+}
+
+.footer2_links{
+  margin: 20px;
+  font-weight: 500;
+  color: white;
+  list-style: none;
+  font-size: 20px;
+}
+
+.footer2{
+  gap:100px;
+}
+
+.footertext3{
+  color: white;
+  font-size: 20px;
+}
+
+.footer3_list{
+  margin-top: 30px;
+  gap:30px;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.footer3_list a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
