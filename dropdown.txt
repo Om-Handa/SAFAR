@@ -1,0 +1,35 @@
+/* 
+.drop{
+  display: inline-block;
+  position: relative;
+}
+
+.signin-dropdown{
+  top:80%;
+  left: -20%;
+  display: none;
+  position: absolute;
+  background-color: #a86645;
+  border:1px solid white;
+  min-width: 150px;
+  z-index: 1; 
+}
+
+.signin-dropdown p{
+  color: white;
+  border-bottom: 1px solid white;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 23px;
+} */
+
+/* .signin:hover{ 
+  .signin-dropdown{
+    display: block;
+  }
+} */
+
+          <!-- <div class="signin-dropdown">
+            <p>SIGN IN </p>
+            <p>LOG IN</p>
+          </div> -->

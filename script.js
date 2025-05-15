@@ -7,9 +7,9 @@ let interval;
 
 let images=[
     'images/hero1.jpg',
-    'images/hero5.jpg',
+    'images/hero6.jpg',
     'images/hero8.jpg',
-    'images/hero7.jpg'
+    'images/hero5.jpg'
 ];
 
 function herochange(index) {
@@ -55,3 +55,4 @@ heroleft.addEventListener("click",()=>{
 })
 
 resetInterval();
+herochange(0)
